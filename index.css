@@ -1,0 +1,133 @@
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 20px; 
+    font-weight: 500;
+    color: white;
+    background-color: #333;
+    margin: 20px auto;
+}
+
+h2,
+p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+.card {
+    grid-area: card;
+    box-sizing: border-box;
+    background: #733FC8;
+    border-radius: 10px;
+    padding: 30px 25px; 
+    display: grid;
+    grid-template-columns: 45px auto;
+    grid-template-rows: 20px 20px auto minmax(auto, 1fr);
+    grid-template-areas:
+        "img name"
+        "img title"
+        "main-quote main-quote"
+        "testimonial testimonial";
+}
+
+.card-name {
+    grid-area: name;
+    font-size: 15px; 
+    font-weight: 500;
+}
+
+.card-title {
+    grid-area: title;
+    font-size: 12px; 
+    opacity: 50%;
+    margin-top: 2px;
+}
+
+.card-qoute {
+    grid-area: main-quote;
+    font-size: 20px; 
+    font-weight: 600;
+    margin: 20px 0; 
+}
+
+.testimonial {
+    font-size: 12px; 
+    grid-area: testimonial;
+    opacity: 70%;
+    line-height: 2;
+}
+
+.card-img {
+    grid-area: img name;
+    height: 40px;
+    width: auto;
+    border-radius: 100%;
+    margin-top: -5px;
+}
+
+.card1 {
+    grid-area: card1;
+    background: #733FC8;
+    color: white;
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 70% 0%;
+}
+
+.card2 {
+    grid-area: card2;
+    background: #48556A;
+    color: white;
+}
+
+.card3 {
+    grid-area: card3;
+}
+
+.card4 {
+    grid-area: card4;
+    background: #19202D;
+    color: white;
+}
+
+.card5 {
+    grid-area: card5;
+}
+
+.card3,
+.card5 {
+    background: white;
+    color: #48556A;
+}
+
+@media (min-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-columns: minmax(250px, auto) minmax(250px, auto);
+        grid-template-areas:
+            "card1 card4"
+            "card2 card3"
+            "card5 card5";
+        gap: 30px;
+        padding: 30px; 
+        align-items: unset;
+    }
+
+    .card {
+        margin: 0;
+    }
+}
+
+@media (min-width: 1100px) {
+    .container {
+        grid-template-columns: repeat(4, minmax(200px, auto));
+        grid-template-areas:
+            "card1 card1 card2 card5"
+            "card3 card4 card4 card5";
+    }
+}
